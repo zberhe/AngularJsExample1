@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="myapp">
+<!-- tells  angular application -->
+
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+</head>
+
+<body>
+	<div ng-controller = "HelloController">
+		<!-- ng model directive tells to store data in the variable -->
+		<label>Name:</label> <input type="text" ng-model="obj.name"
+			placeholder="Enter a name here">
+		<hr />
+
+		<h1>Hello {{obj.name}}!</h1>
+	</div>
+	<script type="text/javascript">
+		var myapp = angular.module("myapp", []);
+		myapp.controller("HelloController",function($scope){
+			$scope.obj = {};// add empty object
+			$scope.obj.helloTitle = "hello there!";
+			$scope.obj.name = "zehafta";
+		});
+	</script>
+</body>
+</html>
